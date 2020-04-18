@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from www.nuclearpowersimulator.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Apr 2020 20:23:35 GMT -->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="CoffeeCup HTML Editor (www.coffeecup.com)">
+  <meta name="created" content="Mon, 27 Feb 2012 18:12:41 GMT">
+  <meta name="description" content="Free online Nuclear Power Plant Simulator game">
+  <meta name="keywords" content="online game,game,play,power,simulation,simulator,nuclear,free,core,heat exchanger,steam,turbine,generator,meltdown,primary,secondary,cooling,tower,loop">
+  <META NAME="author" CONTENT="MH">
+  <META NAME="revisit-after" content="15 days">
+  <META NAME="Identifier-URL" content="index.html">
+  <title>Nuclear Power Plant Simulator free online game ZV800</title>
+<link href="nps.css" rel="stylesheet">
+</head>
+
+<body text="#000000" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF"  onload="initialize()";>
+<SCRIPT LANGUAGE="JavaScript" src="nps.js"></SCRIPT>
+
+<a name="Top"></a>
+<br />
+
+<table class="header" align="center" cellpadding="0" cellspacing="0" summary="" border="0"> 
+  <tr><td align="center"><img src="images/npsLogo.png" width="892" height="64" alt="" border="0" align="absmiddle"></td></tr>
+</table>
+
+<table align="center">
+  <tr>  
+	<td>
+      <table class="intro" align="center" cellspacing="5" cellpadding="5" alt="" border="0">
+      <tr><td align="center" class="instructions">    <!--headerText-->
+        
+      </td></tr>
+      </table>
+	</td>
+  </tr>
+</table>
+<a name="Start"></a>
+
+<table align="center" border="0" cellpadding="" cellspacing="" summary="">
+  <tr><td class="vertspace3"></td></tr>
+  <tr>
+	<td class="topbuttons"><A class="anchor" HREF="#Start" onMouseOver="this.style.textDecoration='underline'" onMouseOut="this.style.textDecoration='none'">Center on Simulator</A></td>
+    <td class="horzspace25"></td>
+    <td class="topbuttons"><A class="anchor" HREF="#Instructions" onMouseOver="this.style.textDecoration='underline'" onMouseOut="this.style.textDecoration='none'">Basic Instructions</A></td>
+    <td class="horzspace25"></td>
+
+  <tr><td class="vertspace3"></td></tr>
+</table>
+
+<form name="cityForm">
+<!-- #########################  cityForm   C I T Y S C A P E   ##########################-->
+<table class="cityForm" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+<tr>
+  <td class="horzspace15"></td>
+  <td align="center"><!-- #########   MegaWatt Power Meter TABLE   #############-->
+    <table class="subHeader" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+	 <tr><td colspan="3" class="text2" align="center">MegaWatts</td></tr>
+     <tr>
+	   <td><img src="images/bulbOff.gif" name="bulb1"  width="22" height="30" alt="" border="0"></td>
+	   <td><input class="meterPower" type="button" name="meterMegaWatts" value="0000" title="This plant generates up to 100 MegaWatts. 1 MegaWatt is 1000 KiloWatts"></td>
+       <td><img src="images/bulbOff.gif" name="bulb2" width="22" height="30" alt="" border="0"></td>
+     </tr>
+     <!-- #########   CLEAR AND BUILD CITY BUTTONS  #############-->
+	 <tr><td colspan="3">
+	 <table class="subHeader" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+       <tr><td colspan="2" class="vertspace5"></td></tr>
+	   <tr>
+	     <td align="center"><INPUT class="cityButton" type="button" onClick="clearCity()" value="Clear City" title="Clear City completely."></td>
+         <td align="center"><INPUT class="cityButton" type="button" onClick="testCityLights()" value="Test Lights" title="Make sure City has no burned out Light Bulbs!."></td>
+       </tr>
+       <tr><td colspan="2" class="vertspace2"></td></tr>
+	   <tr>
+	     <td align="center"><INPUT class="cityButton" type="button" onClick="buildCity()" value="New City" title="Create NEW City Skyline."></td>
+         <td align="center"><INPUT class="cityButton" type="button" onClick="initialize()" value="Play Lights" title="Sort of a screen saver for City buildings."></td>
+	   </tr>
+     </table>
+     </td>
+	 </tr>
+	 <!-- #########   CLEAR AND BUILD CITY BUTTONS  #############-->
+	</table>
+  </td>
+<!--  <td class="horzspace5"></td>-->
+  <td>	<!-- #########   OVERALL City Buildings Table  #############-->   
+    <table class="cityScape" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+    <tr>
+	  <td align="center"><!--  SPACER TABLE  -->
+        <table align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+	      <tr><td class="horzspace75"></td></tr>
+        </table>  
+	  </td>
+	  <td>
+      <table align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+	   <tr class="cityRow">
+	     <!--  EMPTY ROW OF JUST BACKGROUND SCENERY   #####   ROW 1   ######-->
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="beacon" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	   </tr>                           
+       <tr class="cityRow"> <!--    ###################  1st Row of Buildings  (row 2)  #####################   -->
+	     <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+         <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	     <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+         <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+         <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+		 <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+       </tr>
+       <tr class="cityRow"> <!--    #################  2nd Row of Buildings  (row 3)  #####################   -->
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	  </tr>
+        <tr class="cityRow"> <!--   #################  3rd Buildings   row 4  #####################   -->
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	  </tr>
+      <tr class="cityRow"> <!--   #################  4th Buildings  Bottom  row  5  #####################   -->  
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+        <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+	    <td class="cityBlock"><img name="cityWin" src="images/empty.gif" width="30" height="30" alt="" border="0"></td>
+      </tr>
+      </table>
+	  </td>
+	  
+	  <td><!--  SPACER TABLE--> 
+        <table class="autoWH" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+	      <tr><td class="horzspace75"></td></tr>
+        </table>  
+	  </td>
+	  </tr>
+    </table>	
+  </td><!-- END of City Buildings Table  -->	
+
+  <td align="center">         <!--   #########   ON OFF  Button and SCORE  Button  (top left) -->                                                              
+    <table class="borderThin" align="center" cellspacing="0" cellpadding="0" alt="" border="0"> 
+      <tr><td align="center" class="text7">Simulator is</td></tr>          
+	  <tr><td align="center"><input class="buttonOnOff" name="statusOnOff" type="button" value="OFF" title="This shows the state of the Simulator. To start the simulator, click the Start/Reset button below." onclick="window.confirm('To start the Simulator, center the game and click the Start/Reset button. (the flashing red light)')" readonly></td></tr>
+      <tr><td align="center" class="text7">&nbsp;&nbsp;Game Score is&nbsp;&nbsp;</td></tr>	
+	  <tr><td align="center"><input class="buttonScore" name="gameScore" type="button" value="000" title="See how high a score you can achieve." readonly></td></tr>
+      <tr><td align="center" class="text7">&nbsp;&nbsp;Demand Satisfied is&nbsp;&nbsp;</td></tr>	
+	  <tr><td align="center"><input class="buttonScore" name="demand" type="button" value="00" title="This show what percentage of the City demand you have satisfied." readonly></td></tr>
+    </table>
+  </td>
+  <td class="horzspace25"></td>
+</tr>
+
+</table>
+</form>
+
+<!-- ############################################################################################# -->
+<!-- ######################     M A I N   C E N T E R   S E C T I O N     #########################-->
+<!-- ############################################################################################# -->
+<table align="center" cellpadding="0" cellspacing="0" summary="" border="0">
+<tr>
+
+
+<td class="horzspace7"></td>
+
+<td>
+<!-- ########################################   MAIN CENTER CENTER CENTER CENTER SECTION   ##################################-->
+<table align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+<tr>
+
+<td><!-- #########################   moneyForm   Financial Information   ########################  MONEY FORM MONEY MONEY ###-->
+  <form name="moneyForm">
+  <table class="moneyForm" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+    <tr>
+	  <td align="center"><INPUT class="text4" type="button" value="Hour of Day" title="The Hour of a 24 hour day."></td>
+	  <td align="center"><INPUT class="damage" TYPE="button" NAME="dayTime" VALUE="0" readonly></td>
+	</tr>
+    <tr>
+	  <td align="center"><INPUT class="text4" type="button" value="Day Number" title="Number of days simulation has run."></td>
+	  <td align="center"><INPUT class="damage" TYPE="button" NAME="dayDay" VALUE="0" readonly></td>
+	</tr>
+	
+	<tr><td colspan="2"><hr class="rule1"></hr></td></tr>
+	<tr><td colspan="2" align="center"><input class="money2" TYPE="button" value="INCOME"></td></tr>
+    <tr><td colspan="2" align="center">$&nbsp;<INPUT class="text3" TYPE="text" NAME="income1" VALUE="0000" title="This is the income @ 12 cents per KiloWattHour. 1 KWH is using a 1000 watts of power for an hour." readonly></td></tr>
+	<tr><td colspan="2" align="center" class="text3">@ $.12 per KWH</hr></td></tr>
+	<tr><td colspan="2"><hr class="rule1"></hr></td></tr>
+	
+	<tr><td colspan="2" align="center"><input class="money1" TYPE="button" value="EXPENSES"></td></tr>
+    <tr>
+	  <td align="left"><INPUT class="text4" type="button" value="Aux Power" title="This is the cost of back-up power to run the pumps and controls until the Generator starts putting out power."></td><td align "right">$
+	  <INPUT class="text1" TYPE="text" NAME="expense" VALUE="000" readonly></td>
+	</tr>
+
+    <tr>
+	  <td align="left"><INPUT class="text4" type="button" value="Venting Fines" title="This is a fine for venting radioactive gases."></td><td align "right">$
+	  <INPUT class="text1" TYPE="text" NAME="expense" VALUE="000" readonly></td>
+	</tr>
+
+	<tr>
+	  <td align="left"><INPUT class="text4" type="button" value="Maintenance" title="General maintenance on the plant."></td><td align "right">$
+	  <INPUT class="text1" TYPE="text" NAME="expense" VALUE="000" readonly></td>
+	</tr>
+    
+	<tr>
+	  <td align="left"><INPUT class="text4" type="button" value="Lease" title="Lease expense on buildings and property."></td><td align "right">$
+	  <INPUT class="text1" TYPE="text" NAME="expense" VALUE="000" readonly></td>
+	</tr>
+
+	<tr>
+	  <td align="left"><INPUT class="text4" type="button" value="Personnel" title="Salaries and Wages."></td><td align "right">$
+	  <INPUT class="text1" TYPE="text" NAME="expense" VALUE="000" readonly></td>
+	</tr>
+	<tr>
+	  <td align="left"><INPUT class="text4" type="button" value="Repair Expenses" title="Cost Repairs to Reactor components."></td><td align "right">$
+	  <INPUT class="text1" TYPE="text" NAME="expense" VALUE="000" readonly></td>
+	</tr>
+    
+    <tr><td colspan="2"><hr class="rule1"></hr></td></tr>
+	
+	<tr><td colspan="2" align="center"><input class="money3" TYPE="button" value="Net Profit / -Loss"></td></tr>
+    <tr>
+	  <td colspan="2" align="center"><INPUT class="net" TYPE="text" NAME="balance" VALUE="000" readonly></td>
+	</tr>
+	
+	<tr>
+	  <td align="center"><INPUT class="text4" type="button" value="YTD Profit %" title="YTD Percentage of income that is profit."></td>
+	  <td align="center"><INPUT class="damage" TYPE="button" NAME="profitPerCent" VALUE="00 %" readonly></td>
+	</tr>
+		
+  </table>
+</td>
+</form>
+
+<td><!-- #########################   reactorForm   Main Reactor Section   ##########################-->  
+  <form name="reactorForm">
+  <table class="reactorForm" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+  <tr>
+    <td align="center">
+	  <table cellspacing="0" cellpadding="0" alt="" border="0"><!-- First row of TOOLS  -->
+        <tr><td class="vertspace10"></td></tr>	    
+		<tr>
+		  <td class="oneTool"><!--####   G E N E R A T O R      G E N E R A T O R   ####-->
+		    <table title="The Generator produces the Electricity. It will sustain DAMAGE above 2500 RPM" cellspacing="0" cellpadding="0" alt="" border="0"> 
+     		  <tr>
+			    <td align="center" colspan="3"><img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">AC Generator</td>
+			  </tr>
+			  <tr><td class="miniInfo">Max<br />2500</td>
+			      <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+				  <td class="miniInfo">Max<br />2500</td>
+			  </tr>
+     		  <tr><td class="vertspace5" colspan="3"></td></tr>
+     		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  	  
+		    </table>
+		  </td>
+
+          <td class="horzPipe"><img name="shaft" src="images/shaft2.gif" width="50" height="15" alt="" border="0"></td>
+
+		  <td class="oneTool"><!--####   T U R B I N E   T U R B I N E   T U R B I N E   ####-->
+		    <table title="The steam powered Turbine turns the Generator. It will sustain DAMAGE above 2500 RPM" cellspacing="0" cellpadding="0" alt="" border="0">
+     		  <tr>
+			    <td align="center" colspan="3">
+				   <img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">Steam Turbine
+				</td>
+			  </tr>
+              <tr><td class="miniInfo">Max<br />2500</td>
+                <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+              <td class="miniInfo">Max<br />2500</td>
+     		  <tr><td class="vertspace5" colspan="3"></td></tr>
+     		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  </tr>	  
+		    </table>
+		  </td>
+
+		  <td class="horzPipe"><img name="horzPipe1R" src="images/horzPipeOFF1.gif" width="50" height="15" alt="" border="0"></td>
+
+		  <td class="oneTool"><!--####   C O O L I N G   T O W E R   C O O L I N G   T O W E R   ####-->
+		    <table title="The Cooling Tower condenses the steam back into water." cellspacing="0" cellpadding="0" alt="" border="0">
+     		  <tr>
+			    <td align="center" colspan="3">
+                  <img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">Cooling Tower
+				</td>
+			  </tr>
+              <tr><td class="miniInfo">Max<br />250</td>
+			      <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+				  <td class="miniInfo">Max<br />250</td>
+       		  <tr><td class="vertspace5" colspan="3"></td></tr>
+    		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  </tr>	  
+		    </table>
+		  </td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  <tr>
+    <td align="center">
+	  <table cellspacing="0" cellpadding="0" alt="" border="0"><!-- 1st row of pipes  -->
+	    <tr class="noLine">
+		  <td class="NoVertPipe"></td>
+		  <td class="horzspace220"></td>
+		  <td class="vertPipe"><img name="vertPipe2M" src="images/vertPipeOFF1.gif" width="15" height="50" alt="" border="0"></td>
+		  <td class="horzspace220"></td>
+		  <td class="vertPipe"><img name="vertPipe2R" src="images/vertPipeOFF1.gif" width="15" height="50" alt="" border="0"></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  <tr>
+    <td align="center">
+	  <table cellspacing="0" cellpadding="0" alt="" border="0"><!-- 2nd row of tools  -->
+	    <tr>
+		  <td class="oneTool"><!--####   E M E R G E N C Y   V E N T I N G   E M E R G E N C Y   V E N T I N G   ####-->
+		    <table title="You will be fined $$ for release of radioactive gases" cellspacing="0" cellpadding="0" alt="" border="0">
+     		  <tr>
+			    <td align="center" colspan="3">
+                  <img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">Emergency Venting
+				</td>
+			  </tr>
+              <tr><td class="miniInfo">Max<br />0</td>
+			      <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+				  <td class="miniInfo">Max<br />0</td>
+     		  <tr><td class="vertspace5" colspan="3"></td></tr>
+     		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  </tr>	  
+		    </table>
+		  </td>
+		  <td class="horzPipe"><img name="horzPipe3L" src="images/horzPipeOFF1.gif" width="50" height="15" alt="" border="0"></td>
+		  <td class="oneTool"><!--####   H E A T   E X C H A N G E R   H E A T   E X C H A N G E R   ####-->
+		    <table title="Creates steam to drive the Turbine. Keep below 400 degrees to prevent Emergency Venting." cellspacing="0" cellpadding="0" alt="" border="0">
+     		  <tr>
+			    <td align="center" colspan="3">
+                  <img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">Heat Exchanger
+				</td>
+			  </tr>
+              <tr><td class="miniInfo">Max<br />400</td>
+			      <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+				  <td class="miniInfo">Max<br />400</td>
+     		  <tr><td class="vertspace5" colspan="3"></td></tr>
+     		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  </tr>	  
+		    </table>
+		  </td>
+		  <td class="horzPipe"><img name="horzPipe3R" src="images/horzPipeOFF1.gif" width="50" height="15" alt="" border="0"></td>
+		  <td class="oneTool"><!--####   S E C O N D A R Y   C O O L A N T   P U M P   ####-->
+		    <table title="Returns water to the Heat Exchanger from the Cooling Tower." cellspacing="0" cellpadding="0" alt="" border="0">
+     		  <tr>
+			    <td align="center" colspan="3">
+                  <img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">Sec Coolant Pump
+				</td>
+			  </tr>
+              <tr><td class="miniInfo">Max<br />250</td>
+			      <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+				  <td class="miniInfo">Max<br />250</td>
+     		  <tr><td class="vertspace5" colspan="3"></td></tr>
+     		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  </tr>	  
+		    </table>
+		  </td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  <tr>
+    <td align="center">
+	  <table cellspacing="0" cellpadding="0" alt="" border="0"><!-- 2nd row of pipes  -->
+	    <tr class="noLine">
+		  <td class="vertPipe"><img name="vertPipe4L" src="images/vertPipeOFF1.gif" width="15" height="50" alt="" border="0"></td>
+		  <td class="horzspace220"></td>
+		  <td class="vertPipe"><img name="vertPipe4M" src="images/vertPipeOFF1.gif" width="15" height="50" alt="" border="0"></td>
+		  <td class="horzspace220"></td>
+		  <td class="NoVertPipe"></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  <tr>
+    <td align="center">
+	  <table cellspacing="0" cellpadding="0" alt="" border="0"><!-- 3rd row of tools  -->
+	    <tr>
+		  <td class="oneTool"><!--####   R E A C T O R   C O R E   ####-->
+		    <table title="Fission heats the Primary Coolant Loop when the Control Rods are raised." cellspacing="0" cellpadding="0" alt="" border="0">
+     		  <tr>
+			    <td align="center" colspan="3">
+			      <img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">Reactor Core
+				</td>
+			  </tr>
+              <tr><td class="miniInfo">Max<br />750</td>
+			      <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+				  <td class="miniInfo">Max<br />750</td>
+     		  <tr><td class="vertspace5" colspan="3"></td></tr>
+     		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  </tr>	  
+		    </table>
+		  </td>
+		  <td class="horzPipe"><img name="horzPipe5L" src="images/horzPipeOFF1.gif" width="50" height="15" alt="" border="0"></td>
+		  <td class="oneTool"><!--####   P R I M A R Y   C O O L A N T   P U M P   ####-->
+		    <table title="Moves the heat from the core to the Heat Exchanger" cellspacing="0" cellpadding="0" alt="" border="0">
+     		  <tr>
+			    <td align="center" colspan="3">
+                  <img name="wrcTool" src="images/statusOff.gif" width="180" height="15" alt="" border="0">Pri Coolant Pump
+				</td>
+			  </tr>
+              <tr><td class="miniInfo">Max<br />250</td>
+			      <td align="center"><input class="reactorMeter" type="button" name="wrcMeter" value="000"></td>
+				  <td class="miniInfo">Max<br />250</td>
+     		  <tr><td class="vertspace5" colspan="3"></td></tr>
+     		  <tr><td align="center" colspan="3"><img name="indicator" src="images/i0.gif" width="160" height="20" alt="" border="0"></td></tr>
+			  </tr>	  
+		    </table>
+		  </td>
+		  <td class="horzspace50"></td><!--####   Nuclear Power Simulator    L O G O   L O G O  L O G O   ####-->
+		  <td align="center" title="Nuclear Power Plant Simulator Ver 1.2 by MajikMike Simulations." class="oneTool"><font color="#AA0000"><font size="3">100 MegaWatt</font></font><br />Nuclear Power Plant Simulation<font color="#00003E"><br /><font size="2">Model H-9000</font></font></td>
+		</tr>
+	  </table>
+	</td>
+  </tr>
+  <tr><td class="vertspace10"></td></tr>
+  </table>
+  </form>
+</td>
+<td><!--  #################################################################    R E P A I R   F A C I L I T Y   R E P A I R    -->
+  <form name="repairForm"><!-- ############################################    R E P A I R   F A C I L I T Y   R E P A I R    -->
+  <table class="storeForm" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+    <tr><td>
+	<table>
+	<tr>
+	  <td colspan="3" align="center" class="repairItem"><INPUT class="repairH1" type="button" value="Repair Facility" title="Repairs and Maintenance."></td>
+	</tr>
+    <!--<tr><td class="vertspace2"></td></tr>-->
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="AC Generator" title="Repair/Maintain AC Generator." onclick="repairMessage(1)"></td>
+    </tr>
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Steam Turbine" title="Repair/Maintain Steam Turbine." onclick="repairMessage(2)"></td>
+    </tr>
+
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Cooling Tower" title="Repair/Maintain Cooling Tower." onclick="repairMessage(3)"></td>
+    </tr>
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Emergency Venting" title="Repair/Maintain Emergency Venting." onclick="repairMessage(4)"></td>
+    </tr>
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Heat Exchanger" title="Repair/Maintain Heat Exchanger." onclick="repairMessage(5)"></td>
+    </tr>
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Sec Coolant Pump" title="Repair/Maintain Secondary Coolant Pump." onclick="repairMessage(6)"></td>
+    </tr>
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Reactor Core" title="Repair/Maintain Nuclear Reactor Core." onclick="repairMessage(7)"></td>
+    </tr>
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Pri Coolant Pump" title="Repair/Maintain Primary Coolant Pump." onclick="repairMessage(8)"></td>
+    </tr>
+	<tr class="noline">
+	  <td class="repairItem"><img class="condLight" src="images/OffLight.gif" name="conditionLight" width="22" height="22" alt="" border="0" title="Green is 75% to 100 %. Yellow is 50% to 75%. Red is less than 50% and is Fail condition.">
+	    <input class="textPerCent" name="conditionPercent" value="000" title="Condition: 0 to 100 %"></td>
+	  <td><INPUT class="repairButton" type="button" value="Fuel Rod Life" title="Remaining Fuel Rod life." onclick="repairMessage(9)"></td>
+    </tr>
+	<tr><td colspan="3" align="center" class="repairItem">
+      <table>	 
+	    <tr><td class="repairItem">Plant Condition</td><td><INPUT class="damage" TYPE="button" NAME="damage" VALUE="100 %" readonly></td>
+	    </tr>
+	  </table>
+	</td></tr>
+    </table>
+	</td></tr>
+	
+	<tr><td>
+	  <table class="repairBox" align="center">
+		<tr><td colspan="2" align="center">
+		  <textarea name="textInfo" class="repairText" rows="5" readonly>
+		    Reactor equipment can be Maintained & Repaired if damaged during a Warn or Fail condition. It will however cost you money.
+          </textarea>
+	    </td></tr>
+		<tr><!--     ############################    R E P A I R     B U T T O N    ########################  -->
+		  <td align="center" class="repairItem"><INPUT class="repairItem" type="button" value="Repair this Item" title="Perform Maintenance & Repairs on selected Reactor Item." onclick="doRepairs()"></td>
+		</tr>
+	    </td></tr>
+	  </table>
+	</td></tr>
+		
+	</td></tr>
+  </table>
+</td>
+</form>
+
+</tr>
+</table>
+<!-- ##########################   END END END    M A I N   C E N T E R  END END END  ################################-->
+
+
+<!--                                                               MESSAGES  MESSAGES  MESSAGES  -->
+<!--                                                                     MESSAGES  MESSAGES  MESSAGES  -->
+<!--                                                                             MESSAGES  MESSAGES  MESSAGES  -->
+<FORM NAME="messForm">
+<table class="message" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+  <tr>
+    <td><img name="lightRed1" src="images/lightRed3.gif" width="28" height="28" alt="" border="0"></td>
+	<td align="center">
+    <textarea name="mess1" class="message2" rows="3" readonly>Simulator is OFF. To START simulator, click the Start-Reset button. ( the flashing RED light )</textarea>
+	<!--<input class="mess1" type="text" name="mess1" value="To START simulator, click the Start-Reset button.  ( the flashing RED light )" readonly>-->
+    </td>
+	<td><img name="lightRed2" src="images/lightRed3.gif" width="28" height="28" alt="" border="0"></td>
+  </tr>
+</table>
+</FORM>
+                         <!-- #####################   controlForm  CONTROL CONTROL CONTROL  SECTION   ####################-->
+                         <!-- #####################   controlForm  CONTROL CONTROL CONTROL  SECTION   ####################-->
+                         <!-- #####################   controlForm  CONTROL CONTROL CONTROL  SECTION   ####################-->
+<FORM NAME="npsForm">
+<table class="controlForm" align="center">
+<tr>
+
+<td class="horzspace25"></td><!--    HORIZONTAL  SPACING     -->
+
+<td><!-- ######################              START / STOP AND  PUMP PUMP PUMP controls           ####################-->
+  <table align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+  <tr>
+  <td align="center">
+	<table align="center" cellspacing="2" cellpadding="2" border="0"><!-- Start / Reset table  -->
+	  <tr>
+	    <td title="Click to START or RESET simulator"><INPUT class="startButton" TYPE="button" NAME="startButton" VALUE="Start / Reset" onClick="StartStopSimulator()"></td>
+		<td><img name="startLight" src="images/red_light2.gif" width="25" height="25" border="0" alt=""></td>
+	  </tr>
+	  <tr>
+		<td title="Click to PAUSE/RESUME simulator"><INPUT class="Button1" TYPE="button" NAME="pauseButton" VALUE="Pause Simulator" onClick="pauseSimulator()"></td>
+		<td><img name="pauseLight" src="images/OffLight.gif" width="25" height="25" border="0" alt=""></td>
+	  </tr>
+	  <tr>
+		<td title="Click to start Primary Coolant pump. This must be ON to prevent the Reactor Core from overheating. It also transfers heat to the Heat Exchanger to produce steam to power the Turbine."><INPUT class="Button1" TYPE="button" NAME="PriPump" VALUE="Primary Pump" onClick="setPumpON(1)"></td>
+		<td><img name="PumpLight1" src="images/OffLight.gif" width="25" height="25" border="0" alt=""></td>
+	  </tr>
+	  <tr>
+	    <td title="Click to start Secondary Coolant pump. This must be ON to circulate the steam to the Turbine and then the Cooling Tower to condense back into water for the Heat Exchanger."><INPUT class="Button1" TYPE="button" NAME="SecPump" VALUE="Secondary Pump" onClick="setPumpON(2)"></td>
+		<td><img name="PumpLight2" src="images/OffLight.gif" width="25" height="25" border="0" alt=""></td>
+	  </tr>
+    </table><!--   END OF   END OF    Start / Reset table  -->
+  </td></tr>
+  </table>
+</td><!-- ########   END OF       END OF      END OF           START / STOP AND  PUMP PUMP PUMP controls ##########-->
+
+
+<td>
+  <table class="borderThin" align="center" cellspacing="0" cellpadding="0" alt="" border="0">
+  <tr><!-- ########  SLIDER  METER  TEMP GAUGE  METER LIGHTS  ROW 1    1    1    1    #######-->
+    <td title="Raising & Lowering the Control Rods changes REACTOR CORE output."><input class="t1" TYPE="button" value="Reactor Core""></td>
+    <td title="Click to LOWER Control Rods"><INPUT class="Button3" TYPE="button" NAME="UpButton1" value="-" onClick="setSlider(1,0)"></td>
+	<td class="slider"><img name="slider1" src="images/s0.gif" width="180" height="38"></td>
+	<td title="Click to RAISE Control Rods"><INPUT class="Button3" TYPE="button" NAME="DnButton1" VALUE="+" onClick="setSlider(1,1)"></td>
+	<td><input class="controlMeter" type="button" name="sliderMeter" value="000"></td>
+	<td class="m1">%</td>
+	  <!--<td class="slider"><img name="gaugeCoreTemp" src="images/ReactorTempGauge.gif" width="180" height="38"></td>-->
+  </tr>
+  
+  <tr><td colspan="6"><hr class="rule1"></hr></td></tr>
+  
+  <tr><!-- ########  SLIDER  METER  TEMP GAUGE  METER LIGHTS  ROW 2   2    2    2      #######-->
+    <td title="The Primary Coolant Loop LOWERS Reactor Core temperature and RAISES Heat Exchanger temperature."><input class="t1" TYPE="button" value="Pri Coolant"></td>
+    <td title="Click to DECREASE circulation."><INPUT class="Button3" TYPE="button" NAME="UpButton2" VALUE="-" onClick="setSlider(2,0)"></td>
+    <td class="slider"><img name="slider2" src="images/s0.gif" width="180" height="38"></td>
+    <td title="Click to INCREASE circulation."><INPUT class="Button3" TYPE="button" NAME="DnButton2" VALUE="+" onClick="setSlider(2,1)"></td>
+    <td><input class="controlMeter" type="button" name="sliderMeter" value="000"></td>
+    <td class="m1">%</td>
+	<!--<td class="slider"><img name="gaugePriTemp" src="images/PriCoolGauge.gif" width="180" height="38"></td>-->
+  </tr>
+  
+  <tr><td colspan="6"><hr class="rule1"></hr></td></tr>
+  
+  <tr><!-- ########  SLIDER  METER  TEMP GAUGE  METER LIGHTS  ROW 3    3    3    3   #######-->
+    <td title="The Secondary Cooling loop sends steam to the Turbine & returns water to the Heat Exchanger"><input class="t1" TYPE="button" value="Sec Coolant"></td>
+    <td title="Click to DECREASE circulation."><INPUT class="Button3" TYPE="button" NAME="UpButton3" VALUE="-" onClick="setSlider(3,0)"></td>
+    <td class="slider"><img name="slider3" src="images/s0.gif" width="180" height="38"></td>
+    <td title="Click to INCREASE circulation."><INPUT class="Button3" TYPE="button" NAME="DnButton3" VALUE="+" onClick="setSlider(3,1)"></td>
+    <td><input class="controlMeter" type="button" name="sliderMeter" value="000"></td>
+    <td class="m1">%</td>
+  </tr>
+  </table>
+</td>
+
+
+<!--  ########################    HELP AND TIPS AND STRATEGY SECTION BUTTONS    #########################     -->
+<td class="horzspace10"></td>
+<td align="left">                                                                       
+  <table align="center" cellspacing="0" cellpadding="0" alt="" border="0"> 
+	<tr><td align="center"><input class="buttonHelp" name="help1" type="button" value="Basic Instructions" title="Click for Basic Instructions" readonly onclick="document.location='#Instructions'"></a></td></tr>
+	<tr><td class="vertspace5"></td></tr>
+	<tr><td align="center"><input class="buttonHelp" name="help2" type="button" value="Detailed Instructions" title="This will go into a little more detail on how things work." readonly onclick="document.location='#Details'"></td></tr>
+	<tr><td class="vertspace5"></td></tr>
+	<tr><td align="center"><input class="buttonHelp" name="help3" type="button" value="Tips & Strategies" title="Tips to get started playing successfully." readonly onclick="document.location='#Tips'"></td></tr>
+	
+	<tr><td class="vertspace15"></td></tr>
+	<tr><td align="center"><img src="images/npsLogoSmall.gif" width="300" height="14" alt="" border="0"></td></tr>
+	<!--
+	<tr><td class="vertspace5"></td></tr>
+	<tr><td align="center"><input class="survey" name="help4" type="button" value="Quick Survey" title="If you enjoyed this game, please take a moment to answer the 4 questions on this quick survey !" readonly onclick="document.location='survey_form.php'"></td></tr>
+    --> 
+  </table>
+</td>
+<td class="horzspace25"></td><!--    HORIZONTAL  SPACING     -->
+</tr>  
+</table><!-- ###################   END END END    controlForm    ################################-->
+</form>
+</td>
+
+<td class="horzspace7"></td>
+
+
+</tr>
+</table>
+<!-- ########### (end)     E N T I R E     S I M U L A T O R     S E C T I O N     ###########-->
+<!-- ################################################################################################# -->
+
+
+  
+<!--<a href="survey_form.php">.</a>-->   
+</body>
+
+<!-- Mirrored from www.nuclearpowersimulator.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Apr 2020 20:23:40 GMT -->
+</html>
+
+
+
+
